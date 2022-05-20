@@ -20,4 +20,28 @@ final class Bs4_Slider
     {
         
     }
+
+    /**
+     * Initializes a singleton instance
+     */
+    public static function init()
+    {
+        static $instance = false;
+
+        if (!$instance) {
+            $instance = new self();
+        }
+
+        return $instance;
+    }
 }
+
+/**
+ * Start plugin function
+ */
+function start_plugin()
+{
+    return Bs4_Slider::init();
+}
+
+start_plugin();
