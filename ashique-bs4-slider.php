@@ -68,9 +68,16 @@ final class Bs4_Slider
         new Table_Installer();
     }
 
+    /**
+     * Initializes necessary classes and functions
+     */
     public function initialize_plugin()
     {
-        
+        if (is_admin()) {
+            require_once ASHIQUE_BS4_SLIDER_PATH . '/admin/Admin_Classes_Loader.php';
+            new Admin_Classes_Loader();
+            require_once ASHIQUE_BS4_SLIDER_PATH . '/admin/admin-helper-functions.php';
+        }
     }
 }
 
