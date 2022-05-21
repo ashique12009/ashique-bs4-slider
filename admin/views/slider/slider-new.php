@@ -10,7 +10,9 @@
     <hr class="wp-header-end">
 
     <form action="<?php echo esc_url(admin_url('admin-post.php'));?>" method="post">
+
         <?php wp_nonce_field('bs4_slider_nonce'); ?>
+        
         <input type="hidden" name="action" value="bs4_slider_action">
 
         <div id="poststuff">

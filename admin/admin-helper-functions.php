@@ -57,6 +57,7 @@ function get_total_slider_rows($args) {
 
 function remove_slider($id) {
     global $wpdb;
+    
     $wpdb->delete(
         $wpdb->prefix . 'ashique_bs4_slider', // table to delete from
         ['id' => $id], // value in column to target for deletion
@@ -64,4 +65,20 @@ function remove_slider($id) {
     );
 
     return true;
+}
+
+function get_slider_date($id) {
+    global $wpdb;
+
+    $query = "SELECT id,
+                    title,
+                    image, 
+                    link, 
+                    status, 
+                    created_at, 
+                    updated_at
+                FROM {$wpdb->prefix}ashique_bs4_slider
+                WHERE id={$id}";
+  
+    return $wpdb->get_row($query);
 }

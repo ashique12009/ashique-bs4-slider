@@ -49,6 +49,9 @@ class Menu
                 $template = ASHIQUE_BS4_SLIDER_PATH . '/admin/views/slider/slider-new.php';
                 break;
             case 'edit':
+                $slider_data = get_slider_date($id);
+                $template = ASHIQUE_BS4_SLIDER_PATH . '/admin/views/slider/slider-edit.php';
+                break;
 
             default:                
                 $template = ASHIQUE_BS4_SLIDER_PATH . '/admin/views/slider/slider-list.php';
