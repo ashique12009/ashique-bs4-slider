@@ -9,27 +9,9 @@
 
     <hr class="wp-header-end">
 
-    <form action="" method="post" enctype="multipart/form-data" id="berger_paints_slider">
-
-        <input type="hidden" name="field_id" value="0">
-
-        <input type="hidden" name="form_id" value="berger_slider_image">
-
-        <?php wp_nonce_field('berger_paints_slider_nonce'); ?>
-
-        <?php if (isset($_SESSION['berger_error'])) : ?>
-            <div id="message" class="notice notice-error">
-                <p><strong><?php echo $_SESSION['berger_error']; ?></strong></p>
-            </div>
-            <?php unset($_SESSION['berger_error']); ?>
-        <?php endif; ?>
-
-        <?php if (isset($_SESSION['berger_success'])) : ?>
-            <div id="message" class="notice notice-success">
-                <p><strong><?php _e('A new slide added successfully!', 'ashique-bs4-slider'); ?></strong></p>
-            </div>
-            <?php unset($_SESSION['berger_success']); ?>
-        <?php endif; ?>
+    <form action="<?php echo esc_url(admin_url('admin-post.php'));?>" method="post">
+        <?php wp_nonce_field('bs4_slider_nonce'); ?>
+        <input type="hidden" name="action" value="bs4_slider_action">
 
         <div id="poststuff">
 
@@ -78,8 +60,8 @@
                                 <td>
                                     <select name="status" id="status">
                                         <option value="" disabled selected>--- Select a status ---</option>
-                                        <option value="active"><?php _e('Active', 'ashique-bs4-slider'); ?></option>
-                                        <option value="inactive"><?php _e('Inactive', 'ashique-bs4-slider'); ?></option>
+                                        <option value="1"><?php _e('Active', 'ashique-bs4-slider'); ?></option>
+                                        <option value="0"><?php _e('Inactive', 'ashique-bs4-slider'); ?></option>
                                     </select>
                                 </td>
                             </tr>
@@ -95,6 +77,5 @@
         <hr>
 
         <?php submit_button(__('Add Slide', 'ashique-bs4-slider'), 'primary', 'submit'); ?>
-
     </form>
 </div>
