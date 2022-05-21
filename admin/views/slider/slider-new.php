@@ -52,7 +52,8 @@
                                     <label for="slide_image"><?php _e('Select An Image', 'berger-paints'); ?></label>
                                 </th>
                                 <td>
-                                    <input type="button" name="select_image" data-input="slide_image" data-title="Select Slider Image" data-btn-text="Select Image" data-multiple="false" data-closest="td" class="button wpMediaBtn" value="Select an Image">
+                                    <img id="image_preview" src="" width="180" height="120" />
+                                    <input type="button" name="select_image" id="select_image" data-input="slide_image" data-title="Select Slider Image" data-btn-text="Select Image" data-multiple="false" data-closest="td" class="button wpMediaBtn" value="Select an Image">
                                     <input type="hidden" name="slide_image" id="slide_image" />
                                     <p class="description" id="home-description">
                                         <small>( Select image with 3 : 1 aspect rario. Preferably 1920x640 pixels )</small>
