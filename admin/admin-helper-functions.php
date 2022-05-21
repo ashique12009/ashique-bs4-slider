@@ -67,7 +67,7 @@ function remove_slider($id) {
     return true;
 }
 
-function get_slider_date($id) {
+function get_slider_data($id) {
     global $wpdb;
 
     $query = "SELECT id,
