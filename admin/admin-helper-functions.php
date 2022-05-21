@@ -1,5 +1,5 @@
 <?php
-function getSliderRow($args) {
+function get_slider_row($args) {
     global $wpdb;
   
     $defaults = array(
@@ -27,7 +27,7 @@ function getSliderRow($args) {
     return $wpdb->get_results($query, ARRAY_A);
 }
 
-function getTotalSliderRows($args) {
+function get_total_slider_rows($args) {
     global $wpdb;
   
     $defaults = array(
@@ -53,4 +53,15 @@ function getTotalSliderRows($args) {
     } else {
         return 0;
     }
+}
+
+function remove_slider($id) {
+    global $wpdb;
+    $wpdb->delete(
+        $wpdb->prefix . 'ashique_bs4_slider', // table to delete from
+        ['id' => $id], // value in column to target for deletion
+        ['%d'] // format of value being targeted for deletion
+    );
+
+    return true;
 }

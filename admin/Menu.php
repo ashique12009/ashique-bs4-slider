@@ -41,7 +41,7 @@ class Menu
         $id     = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
         if ('delete' === $action && $id > 0) {
-            
+            remove_slider($id);
         }
 
         switch ($action) {

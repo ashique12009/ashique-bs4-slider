@@ -111,6 +111,15 @@ class Slider_List_Table extends \WP_List_Table
         );
     }
 
+    function column_title($item)
+    {
+        $actions           = array();
+        $actions['edit']   = sprintf('<a href="%s" data-id="%d" title="%s">%s</a>', admin_url('admin.php?page=bs4-slider&action=edit&id=' . $item['id']), $item['id'], __('Edit slider image', 'ashique-bs4-slider'), __('Edit', 'ashique-bs4-slider'));
+        $actions['delete'] = sprintf('<a href="%s" class="submitdelete" data-id="%d" title="%s">%s</a>', admin_url('admin.php?page=bs4-slider&action=delete&id=' . $item['id']), $item['id'], __('Delete this slide image', 'ashique-bs4-slider'), __('Delete', 'ashique-bs4-slider'));
+
+        return sprintf('<a href="%1$s"><strong>%2$s</strong></a> %3$s', admin_url('admin.php?page=bs4-slider&action=edit&id=' . $item['id']), $item['title'], $this->row_actions($actions));
+    }
+
     public function prepare_items() 
     {
         $columns                = $this->get_columns();
@@ -135,8 +144,8 @@ class Slider_List_Table extends \WP_List_Table
             'filter_template_id' => $filter_template_id,
         ];
 
-        $this->items = getSliderRow($args);
-        $total_items = getTotalSliderRows($args);
+        $this->items = get_slider_row($args);
+        $total_items = get_total_slider_rows($args);
 
         $this->set_pagination_args([
             'total_items' => $total_items, //WE have to calculate the total number of items
