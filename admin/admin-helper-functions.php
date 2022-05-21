@@ -14,7 +14,8 @@ function getSliderRow($args) {
                     image,
                     link,
                     status,
-                    created_at 
+                    created_at,
+                    updated_at  
                 FROM {$wpdb->prefix}ashique_bs4_slider";
     
     if (isset($args['orderby'])) {
@@ -41,7 +42,8 @@ function getTotalSliderRows($args) {
                     image, 
                     link, 
                     status, 
-                    created_at 
+                    created_at, 
+                    updated_at
                 FROM {$wpdb->prefix}ashique_bs4_slider";
   
     $udata = $wpdb->get_results($query, ARRAY_A);

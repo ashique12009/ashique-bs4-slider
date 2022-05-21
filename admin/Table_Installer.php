@@ -60,6 +60,7 @@ class Table_Installer {
                 `link` VARCHAR(255) NOT NULL,
                 `status` BOOLEAN NOT NULL DEFAULT '1',
                 `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
                 PRIMARY KEY (`id`)
             ) $collate;,"
         ];

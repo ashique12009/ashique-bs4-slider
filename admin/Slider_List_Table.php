@@ -35,6 +35,7 @@ class Slider_List_Table extends \WP_List_Table
             'image'         => __('Image', 'ashique-bs4-slider'),
             'status'        => __('Status', 'ashique-bs4-slider'),
             'created_at'    => __('Created At', 'ashique-bs4-slider'),
+            'updated_at'    => __('Updated At', 'ashique-bs4-slider'),
         ];
         return $columns;
     }
@@ -61,6 +62,9 @@ class Slider_List_Table extends \WP_List_Table
 
             case 'created_at':
                 return '<em>' . date('F j, Y', strtotime($item['created_at'])) . '</em>';
+            
+            case 'updated_at':
+                return '<em>' . date('F j, Y', strtotime($item['updated_at'])) . '</em>';
 
             default:
                 return isset($item[$column_name]) ? $item[$column_name] : '';
