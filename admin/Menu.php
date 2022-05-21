@@ -46,11 +46,11 @@ class Menu
 
         switch ($action) {
             case 'add_new':
-
+                $template = ASHIQUE_BS4_SLIDER_PATH . '/admin/views/slider/slider-new.php';
+                break;
             case 'edit':
 
-            default:
-                
+            default:                
                 $template = ASHIQUE_BS4_SLIDER_PATH . '/admin/views/slider/slider-list.php';
                 break;
         }

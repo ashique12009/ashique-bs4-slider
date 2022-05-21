@@ -12,5 +12,7 @@ class Admin_Classes_Loader
     {
         require_once ASHIQUE_BS4_SLIDER_PATH . '/admin/Menu.php';
         new Menu();
+        require_once ASHIQUE_BS4_SLIDER_PATH . '/admin/Assets.php';
+        new Assets();
     }
 }
