@@ -55,6 +55,7 @@ final class Bs4_Slider
         define('ASHIQUE_BS4_SLIDER_VERSION', self::version);
         define('ASHIQUE_BS4_SLIDER_FILE', __FILE__);
         define('ASHIQUE_BS4_SLIDER_PATH', __DIR__);
+        define('ASHIQUE_BS4_SLIDER_FRONTEND_PATH', __DIR__ . '\frontend');
         define('ASHIQUE_BS4_SLIDER_URL', plugins_url('', ASHIQUE_BS4_SLIDER_FILE));
         define('ASHIQUE_BS4_SLIDER_ASSETS', ASHIQUE_BS4_SLIDER_URL . '/assets');
     }
@@ -78,6 +79,12 @@ final class Bs4_Slider
             new Admin_Classes_Loader();
             require_once ASHIQUE_BS4_SLIDER_PATH . '/admin/admin-helper-functions.php';
         }
+
+        require_once ASHIQUE_BS4_SLIDER_PATH . '/frontend/frontend-helper-functions.php';
+        require_once ASHIQUE_BS4_SLIDER_PATH . '/frontend/Frontend_Assets.php';
+        new Frontend_Assets();
+        require_once ASHIQUE_BS4_SLIDER_PATH . '/frontend/Shortcode_Handler.php';
+        new Shortcode_Handler();
     }
 }
 
