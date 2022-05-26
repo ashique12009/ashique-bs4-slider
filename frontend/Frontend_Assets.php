@@ -1,4 +1,5 @@
 <?php 
+namespace ashique_bs4_slider\frontned;
 
 /**
  * Frontend Assets class 

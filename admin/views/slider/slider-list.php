@@ -14,7 +14,7 @@
         <?php
             require_once ASHIQUE_BS4_SLIDER_PATH . '/admin/Slider_List_Table.php';
                     
-            $slider_list_table = new Slider_List_Table();
+            $slider_list_table = new ashique_bs4_slider\admin\Slider_List_Table();
             $slider_list_table->prepare_items();
             $slider_list_table->views();
             $slider_list_table->display();

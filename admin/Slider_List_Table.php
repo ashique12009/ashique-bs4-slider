@@ -1,4 +1,5 @@
 <?php
+namespace ashique_bs4_slider\admin;
 
 if (!class_exists('WP_List_Table')) {
     require_once ABSPATH . 'wp-admin/includes/class-wp-list-table.php';

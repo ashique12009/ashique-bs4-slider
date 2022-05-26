@@ -1,4 +1,6 @@
 <?php
+namespace ashique_bs4_slider\frontned;
+
 /**
 * The shorcode handler class
 */

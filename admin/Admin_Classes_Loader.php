@@ -1,4 +1,5 @@
 <?php 
+namespace ashique_bs4_slider\admin;
 
 /**
  * All admin classes will be loaded here

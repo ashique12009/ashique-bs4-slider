@@ -1,4 +1,5 @@
 <?php
+
 function get_slider_row($args) {
     global $wpdb;
   

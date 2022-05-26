@@ -12,7 +12,7 @@
  */
 
 // If this file is called directly, abort.
-if (! defined('ABSPATH')) {
+if (!defined('ABSPATH')) {
 	die('Invalid request.');
 }
 
@@ -66,7 +66,7 @@ final class Bs4_Slider
     public function activate()
     {
         require_once ASHIQUE_BS4_SLIDER_PATH . '/admin/Table_Installer.php';
-        new Table_Installer();
+        new ashique_bs4_slider\admin\Table_Installer();
     }
 
     /**
@@ -76,15 +76,15 @@ final class Bs4_Slider
     {
         if (is_admin()) {
             require_once ASHIQUE_BS4_SLIDER_PATH . '/admin/Admin_Classes_Loader.php';
-            new Admin_Classes_Loader();
+            new ashique_bs4_slider\admin\Admin_Classes_Loader();
             require_once ASHIQUE_BS4_SLIDER_PATH . '/admin/admin-helper-functions.php';
         }
 
         require_once ASHIQUE_BS4_SLIDER_PATH . '/frontend/frontend-helper-functions.php';
         require_once ASHIQUE_BS4_SLIDER_PATH . '/frontend/Frontend_Assets.php';
-        new Frontend_Assets();
+        new ashique_bs4_slider\frontned\Frontend_Assets();
         require_once ASHIQUE_BS4_SLIDER_PATH . '/frontend/Shortcode_Handler.php';
-        new Shortcode_Handler();
+        new ashique_bs4_slider\frontned\Shortcode_Handler();
     }
 }
 
